@@ -1,0 +1,60 @@
+First-Person Aim and Recoil Control Script
+
+This script enhances the aiming and recoil mechanics of GTA V, providing a first-person aiming experience when shooting, smoother recoil handling, and improved crouch-aiming transitions. It forces the player to stay in first-person view when aiming or shooting, but reverts to third-person view once the action is complete.
+
+Features
+First-Person Aim: Forces first-person view when aiming or shooting a weapon.
+Smooth Recoil: Custom recoil settings for different weapons with a more realistic feel.
+Crouch-Aim Transition: Fixes issues with crouch-aiming, allowing smooth transitions between crouch-walking and standing while aiming.
+Muzzle Flash and Screen Shake: Adds muzzle flash effects when shooting and screen shake for more immersive gameplay.
+Customizable: You can adjust recoil multipliers, camera shake intensity, and muzzle flash effects in the script settings.
+Installation
+Prerequisites:
+
+Ensure you have a working FiveM server or a local setup to test the script.
+The script is designed for GTA V modding using Lua (specifically for use with FiveM).
+Add the Script to Your Server:
+
+Download the script and place it into your server's resources folder (e.g., resources/first_person_recoil/).
+Add the following line to your server.cfg:
+ruby
+Copy code
+ensure first_person_recoil
+Adjust Configurations (Optional):
+
+If you want to adjust recoil or other settings, open the script file and modify the values under the "Fine-tuned settings" section.
+Controls
+Aim Down Sights (Right Mouse Button by default):
+Forces first-person view while aiming.
+Crouch (Ctrl by default):
+Toggle crouch to move more stealthily. Combine with aiming for crouch-aiming.
+Toggle Camera View (V by default):
+Switch between third-person and first-person views when you are not holding a weapon.
+Customizing Recoil and Other Settings
+You can modify the following settings to adjust the recoil and effects to your liking:
+
+Recoil Settings:
+
+Each weapon has a predefined recoil pattern. You can adjust the vertical, horizontal, and multiplier values for individual weapons in the weaponRecoil table.
+Example: If you want a stronger recoil for the WEAPON_CARBINERIFLE, increase the vertical.max or multiplier.
+Shake Intensity:
+
+Modify the shakeIntensity variable for stronger or weaker screen shakes during shooting.
+Muzzle Flash:
+
+The muzzleFlashScale adjusts the scale of the muzzle flash effect when firing. You can also adjust the color with muzzleFlashColor.
+Troubleshooting
+Problem: The script does not force first-person view when I aim.
+Ensure that your weapon is equipped. The script forces first-person view only when the player has a weapon out.
+If you are holding the aim button (Right Mouse Button) and shooting, the script will switch to first-person view.
+Problem: The crouch-aiming transition is not smooth, or I get stuck.
+This issue is generally due to the character's movement or animation state not being reset properly. Make sure you're using the latest version of the script. If issues persist, please check that no conflicting mods or scripts are running that could interfere with animations.
+Known Limitations
+Weapon-specific settings: While the script provides recoil customization for a variety of weapons, not all weapons may have custom recoil patterns by default. You can easily add more weapon patterns by following the structure used in the weaponRecoil table.
+Animation delays: In some cases, there may be slight animation delays when transitioning between crouch-walk and aim states. This is mainly due to the game's animation system and might vary based on the server performance.
+Credits
+Script Developer: Safe Haven
+
+Special Thanks: The FiveM community for Lua scripting resources and help.
+License
+This script is open-source and can be freely modified or redistributed. However, the author (you) must be credited if modifications are made or redistributed.
